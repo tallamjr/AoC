@@ -6,21 +6,30 @@ import scala.math._
 
 object FuelCalculation extends App {
 
+  def fuelRequirementEquation(fuel: Int) : Int = {
+
+      val feulReq = ( fuel / 3 ) - 2
+      return feulReq
+  }
+
+  val lines: Iterator[String] =
+
+  if (args.length > 0) {
+    val filename = args(0)
+    Source.fromFile(filename).getLines
+  } else {
+    val filename = "/day01/input.txt"
+    val fileStream = getClass.getResourceAsStream(filename)
+    Source.fromInputStream(fileStream).getLines
+  }
+
   // Create empty list of Integers
   var nums = new ListBuffer[Int]()
-
-  // Get lines from file
-  // val filename = getClass.getResource("/input.txt").getFile()
-  // println(filename)
-
-  val fileStream = getClass.getResourceAsStream("/day01/input.txt")
-  val lines = Source.fromInputStream(fileStream).getLines
-  // lines.foreach(line => println(line))
 
   // for (line <- Source.fromFile(filename).getLines) {
   for (line <- lines) {
     val linha  = line.toInt
-    var fuelRequirement = ((linha:Int) / 3) - 2
+    var fuelRequirement = fuelRequirementEquation(linha)
     nums += fuelRequirement
   }
 
@@ -29,5 +38,3 @@ object FuelCalculation extends App {
   println(numList.sum)
 
 }
-
-// class Input(var filename: String)
