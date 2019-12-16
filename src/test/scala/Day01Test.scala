@@ -17,4 +17,9 @@ class HelloTests extends FunSuite {
       arr(13)
     }
   }
+
+  test("Fuel requirement for 500") {
+    assert(FuelCalculation.fuelRequirementEquation(500) == 164)
+  }
+
 }
