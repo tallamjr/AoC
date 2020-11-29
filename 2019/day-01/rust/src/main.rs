@@ -1,3 +1,5 @@
+use std::fs;
+use std::io;
 use std::path::PathBuf;
 use structopt::StructOpt;
 
@@ -27,11 +29,13 @@ fn main() {
     let opt = Opt::from_args();
     println!("{:?}", opt);
     match opt.input {
-        Some(path) => unimplemented!(),
+        Some(path) => {
+            let file = fs::File::open(path).unwrap();
+            let reader = io::BufReader::new(file);
+            let answer = day_01::day01::run(reader);
+            println!("{}", answer);
+        }
         None => unimplemented!(),
     }
 
-    let answer = day_01::day01::run();
-
-    println!("{}", answer);
 }

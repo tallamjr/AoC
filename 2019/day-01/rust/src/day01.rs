@@ -1,15 +1,14 @@
-use std::fs;
-use std::io::{self, BufRead};
+use std::io;
 
-pub fn run() -> usize {
-    let file = fs::File::open("../data/input.txt").unwrap();
-    let mut reader = io::BufReader::new(file);
-
+pub fn run<R>(mut input: R) -> usize
+where
+    R: io::BufRead,
+{
     let mut buffer = String::new();
 
     let mut total = 0;
     loop {
-        if reader.read_line(&mut buffer).unwrap() == 0 {
+        if input.read_line(&mut buffer).unwrap() == 0 {
             break;
         }
         let n = buffer.trim().parse::<usize>().unwrap();
