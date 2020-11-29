@@ -26,6 +26,11 @@ struct Opt {
 fn main() {
     let opt = Opt::from_args();
     println!("{:?}", opt);
+    match opt.input {
+        Some(path) => unimplemented!(),
+        None => unimplemented!(),
+    }
+
     let answer = day_01::day01::run();
 
     println!("{}", answer);
