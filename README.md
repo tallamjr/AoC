@@ -2,7 +2,7 @@
 
 ![](https://imgs.xkcd.com/comics/the_true_meaning_of_christmas.png)
 
-### Tests
+<details> ### Tests
 
 #### `rust`
 
@@ -17,3 +17,4 @@ Ensure correct `conda` environment set up and run:
 ```bash
 pytest .
 ```
+</details>
