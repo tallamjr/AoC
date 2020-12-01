@@ -1,0 +1,4 @@
+[workspace]
+members = [
+    "2020/day-01/rust/",
+    ]
