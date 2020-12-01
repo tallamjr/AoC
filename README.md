@@ -2,7 +2,8 @@
 
 ![](https://imgs.xkcd.com/comics/the_true_meaning_of_christmas.png)
 
-<details> ### Tests
+<details>
+<summary>Testing</summary>
 
 #### `rust`
 
