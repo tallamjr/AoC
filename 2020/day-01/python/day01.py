@@ -7,6 +7,9 @@
 # Another idea could be to use binary search of the ordered list
 import itertools
 
+from pathlib import Path
+input_data = f"{Path(__file__).absolute().parent.parent}/data/input.txt"
+
 
 def read_file_as_list(filename) -> list:
     with open(filename) as f:
@@ -17,7 +20,7 @@ def read_file_as_list(filename) -> list:
     return lines
 
 
-lines = read_file_as_list("../data/input.txt")
+lines = read_file_as_list(input_data)
 
 
 def find_two_items_equal_to_2020(item_list):
